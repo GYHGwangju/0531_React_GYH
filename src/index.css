@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Nanum-Reg";
+  font-weight: normal;
+  src: url("./fonts/NanumGothic.ttf")format("truetype");
+}
+
+@font-face {
+  font-family: 'KCC-Hanbit';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/KCC-Hanbit.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  font-family: "Nanum-Reg",-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "Nanum-Reg",source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
