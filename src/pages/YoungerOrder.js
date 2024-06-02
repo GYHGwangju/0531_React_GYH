@@ -225,7 +225,7 @@ const YoungerOrder = () => {
                                 <span style={{fontSize: 30, color: 'rgba(0,0,0,1)'}}>주문
                                     취소</span>
                             </div> */}
-                            <Button variant="outline-secondary" style={{width:'35%',height:'100%', fontSize:'32pt'}}>주문 취소</Button>
+                            <Button variant="outline-secondary" style={{width:'35%',height:'100%', fontSize:'32pt'}} onClick={handleClear}>주문 취소</Button>
                         </div>
                     </div>
                 </Col>

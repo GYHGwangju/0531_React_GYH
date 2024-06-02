@@ -73,7 +73,7 @@ const SearchOrder = () => {
 
     return (
         <div className='container'>
-            <div className='youngerorder-container'>
+            <div className='youngerorder-container'>    
                 <Row style={{ height: '100%', width: '100%' }}>
                     <Col md={8} className='youngerorder-middle'>
                         <Row>
@@ -84,9 +84,9 @@ const SearchOrder = () => {
                         <div className='youngerorder-detail gap-3'>
                             <OrderList orderList={orderList} />
                             <OrderStats getOrderCount={getOrderCount} totalPrice={totalPrice} />
-                            <div className='d-grid gap-2'>
-                                <Button className='btn-primary rounded-4' onClick={handleTakeoutConfirm}><h3>주문 확정</h3></Button>
-                                <Button className='btn-danger rounded-4' onClick={handleClear}><h3>주문 취소</h3></Button>
+                            <div className='d-grid gap-2' style={{fontFamily:"Nanum-Reg"}}>
+                                <Button className='btn-primary rounded-4' onClick={handleTakeoutConfirm}><h3 style={{ marginTop:'5px'}}>주문 확정</h3></Button>
+                                <Button className='btn-secondary rounded-4' onClick={handleClear}><h3  style={{ marginTop:'5px'}}>주문 취소</h3></Button>
                             </div>
                         </div>
                     </Col>

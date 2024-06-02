@@ -1,25 +1,32 @@
-import {Card, CardBody, Col, Row} from "react-bootstrap";
+import { Card, CardBody, Table } from "react-bootstrap";
 import React from "react";
 
 const OrderList = ({ orderList }) => {
     return (
-        <Card className='rounded-4 shadow-sm border-0'>
+        <Card className='rounded-4 shadow-sm border-0' style={{fontFamily:"Nanum-Reg"}}>
             <CardBody>
-                <span><h3>주문 목록</h3></span>
-                {orderList.map((order) => {
-                    return (
-                        <Row key={order.id}>
-                            <Col md={5}><h5>{order.name}</h5></Col>
-                            <Col md={3}><h5>{order.count}</h5></Col>
-                            <Col md={4}><h5>{order.price * order.count}￦</h5></Col>
-                        </Row>
-                    )
-                })}
+                <h3>주문 목록</h3>
+                <Table striped bordered hover style={{fontFamily:'Nanum-Reg'}}>
+                    <thead>
+                        <tr>
+                            <th>상품명</th>
+                            <th>수량</th>
+                            <th>가격</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {orderList.map((order) => (
+                            <tr key={order.id}>
+                                <td>{order.name}</td>
+                                <td>{order.count}</td>
+                                <td>{order.price * order.count} ￦</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
             </CardBody>
         </Card>
     );
 }
 
-
 export default OrderList;
-
