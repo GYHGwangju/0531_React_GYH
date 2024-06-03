@@ -10,8 +10,8 @@ const OrderStats = ({ getOrderCount, totalPrice }) => {
                     <Col md={6}><h4 style={{marginTop:'4px'}}>{getOrderCount()} 개</h4></Col>
                 </Row>
                 <Row>
-                    <Col md={6}><h3>결제 금액</h3></Col>
-                    <Col md={6}><h4 style={{marginTop:'4px'}}>{totalPrice}￦</h4></Col>
+                    <Col md={6}><h3 style={{color:'red'}}>결제 금액</h3></Col>
+                    <Col md={6}><h4 style={{marginTop:'4px', color:'red'}}>{totalPrice}￦</h4></Col>
                 </Row>
             </CardBody>
         </Card>

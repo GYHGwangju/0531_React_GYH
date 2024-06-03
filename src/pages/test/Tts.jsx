@@ -1,7 +1,6 @@
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import React, { useState, useEffect } from "react";
-import AudioStreaming from "./AudioStreaming";
-import {Button, Row, Col, Container, CardBody, CardHeader, Card} from "react-bootstrap";
+import { Button, Row, Col, Container, Card } from "react-bootstrap";
 
 const Tts = () => {
     const { transcript, listening, resetTranscript } = useSpeechRecognition();
@@ -17,26 +16,28 @@ const Tts = () => {
         if (listening) {
             setIsRecording(null);
             SpeechRecognition.stopListening();
-
-
-            //setSendingText(userScript);
         } else {
             resetTranscript();
-            setIsRecording(<div className="spinner-grow bg-danger" role="status"/>);
+            setIsRecording(<div className="spinner-grow bg-danger" role="status" />);
             SpeechRecognition.startListening({ language: 'ko-KR', continuous: true });
         }
     }
 
+    const noSelectStyle = {
+        userSelect: 'none',
+        WebkitUserSelect: 'none',
+        MozUserSelect: 'none',
+        msUserSelect: 'none',
+    };
+
     return (
-
-        <Container fluid className="d-flex flex-column min-vh-100">
-
-            <Row className="flex-grow-1 overflow-auto p-4">
+        <Container fluid className="d-flex flex-column min-vh-100" style={{ fontFamily: 'Nanum-Reg', fontSize: 'larger' }}>
+            <Row className="flex-grow-1 overflow-auto p-4" style={noSelectStyle}>
                 <Col md={{ span: 6, offset: 3 }}>
                     <Card className="mb-4">
-                        <Card.Body className="d-flex">
+                        <Card.Body className="d-flex" style={noSelectStyle}>
                             <div className="me-3">
-                                <div className="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
+                                <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
                                     AI
                                 </div>
                             </div>
@@ -46,13 +47,12 @@ const Tts = () => {
                             </div>
                         </Card.Body>
                     </Card>
-
                 </Col>
             </Row>
-            <Row className="bg-light p-4">
+            <Row className="bg-light p-4" style={noSelectStyle}>
                 <Col md={{ span: 6, offset: 3 }}>
                     <Card className="mb-4">
-                        <Card.Body className="d-flex">
+                        <Card.Body className="d-flex" style={noSelectStyle}>
                             <div className="me-3">
                                 <div className="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
                                     U
@@ -61,12 +61,11 @@ const Tts = () => {
                             <div className="flex-grow-1">
                                 <p className="mb-1 text-muted">User</p>
                                 <p className="overflow-auto">{transcript}</p>
-
                             </div>
                             <Button
                                 onClick={toggleListening}
                                 className={`ms-auto ${listening ? 'btn-danger' : 'btn-light'}`}
-                                style={{height: '40px', flexShrink: 0}}
+                                style={{ height: '40px', flexShrink: 0 }}
                             >
                                 {listening ? '음성인식 중지' : '음성인식 시작'}
                             </Button>
@@ -76,8 +75,6 @@ const Tts = () => {
             </Row>
         </Container>
     );
-
-
 }
 
 export default Tts;

@@ -3,7 +3,7 @@ import React from "react";
 
 const OrderList = ({ orderList }) => {
     return (
-        <Card className='rounded-4 shadow-sm border-0' style={{fontFamily:"Nanum-Reg"}}>
+        <Card className='rounded-4 shadow-sm border-0' style={{fontFamily:"Nanum-Reg", marginTop:'50px'}}>
             <CardBody>
                 <h3>주문 목록</h3>
                 <Table striped bordered hover style={{fontFamily:'Nanum-Reg'}}>
