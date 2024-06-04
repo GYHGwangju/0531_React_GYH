@@ -32,6 +32,8 @@ const Tts = () => {
 
     return (
         <Container fluid className="d-flex flex-column min-vh-100" style={{ fontFamily: 'Nanum-Reg', fontSize: 'larger' }}>
+            <h1 style={{marginTop:'40px',textAlign:'center'}}>음성인식 주문 화면</h1>
+            <h3 style={{textAlign:'center'}}>음성인식 시작 버튼을 눌러, 인공지능과 대화하면서 주문해 보세요!</h3>
             <Row className="flex-grow-1 overflow-auto p-4" style={noSelectStyle}>
                 <Col md={{ span: 6, offset: 3 }}>
                     <Card className="mb-4">
@@ -62,15 +64,15 @@ const Tts = () => {
                                 <p className="mb-1 text-muted">User</p>
                                 <p className="overflow-auto">{transcript}</p>
                             </div>
-                            <Button
-                                onClick={toggleListening}
-                                className={`ms-auto ${listening ? 'btn-danger' : 'btn-light'}`}
-                                style={{ height: '40px', flexShrink: 0 }}
-                            >
-                                {listening ? '음성인식 중지' : '음성인식 시작'}
-                            </Button>
                         </Card.Body>
                     </Card>
+                    <Button
+                        onClick={toggleListening}
+                        className={`w-100 ${listening ? 'btn-danger' : 'btn-secondary'}`}
+                        style={{ height: '80px' }}
+                    >
+                        {listening ? '음성인식 중지' : '음성인식 시작'}
+                    </Button>
                 </Col>
             </Row>
         </Container>

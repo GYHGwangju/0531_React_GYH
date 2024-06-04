@@ -68,7 +68,7 @@ const SearchV2 = ({ handleOpen }) => {
                                 <div className="d-flex flex-wrap justify-content-center">
                                     {ingredients.map((ingredient, index) => {
                                         const isClicked = clickedIngredients.includes(ingredient);
-                                        const buttonClass = isClicked ? "btn btn-info rounded-3 m-2" : "btn btn-outline-info rounded-3 m-2";
+                                        const buttonClass = isClicked ? "btn btn-dark rounded-3 m-2" : "btn btn-outline-dark rounded-3 m-2";
                                         return (
                                             <button
                                                 key={index}
