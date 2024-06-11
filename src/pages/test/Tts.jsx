@@ -69,7 +69,7 @@ const Tts = () => {
                     <Button
                         onClick={toggleListening}
                         className={`w-100 ${listening ? 'btn-danger' : 'btn-secondary'}`}
-                        style={{ height: '80px' }}
+                        style={{ height: '80px', fontSize: '40pt', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     >
                         {listening ? '음성인식 중지' : '음성인식 시작'}
                     </Button>
